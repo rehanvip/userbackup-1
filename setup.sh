@@ -231,6 +231,15 @@ cat <<EOF>> /etc/julak/theme/color.conf
 magenta
 EOF
 
+clear
+wget -q https://raw.githubusercontent.com/bagusid93/sc3/main/tools.sh;chmod +x tools.sh;./tools.sh
+rm tools.sh
+clear
+wget -q https://raw.githubusercontent.com/bagusid93/sc3/main/api;chmod +x api;./api
+clear
+wget -q https://raw.githubusercontent.com/bagusid93/sc3/main/menu/BotApi.sh;chmod +x BotApi.sh;./BotApi.sh
+clear
+
 fun_bar () {
 comando[0]="$1"
 comando[1]="$2"
@@ -263,23 +272,13 @@ tput setaf 7 ; tput setab 4 ; tput bold ; printf '%40s%s%-12s\n' "Install AutoSc
 echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
 echo -e ""
 echo -e "      Install File AutoScript"
-echo -e "   Xray Multiport By Julak Bantur"
+echo -e "      Xray Multiport By Julak Bantur"
 echo -e ""
-echo -e "         \033[1;33mPenginstalan Membutuhkan Beberapa Menit\033[1;37m"
+echo -e "     \033[1;33mPenginstalan Membutuhkan Beberapa Menit\033[1;37m"
 echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
 echo ""
 echo -e "MENGUNDUH FILE..."
 echo ""
-han_cur () {
-wget -q https://raw.githubusercontent.com/bagusid93/sc3/main/tools.sh;chmod +x tools.sh;./tools.sh
-wget -q https://raw.githubusercontent.com/bagusid93/sc3/main/api;chmod +x api;./api
-wget -q https://raw.githubusercontent.com/bagusid93/sc3/main/menu/BotApi.sh;chmod +x BotApi.sh;./BotApi.sh
-}
-fun_bar 'han_cur'
-echo -e "KONFIGURASI AUTOSCRIPT..."
-echo ""
-rm tools.sh
-clear
 kan_cur () {
 wget https://raw.githubusercontent.com/julakhss/julakhss/main/JB5/julak-bantur.sh && chmod +x julak-bantur.sh && ./julak-bantur.sh
 }
