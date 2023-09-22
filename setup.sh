@@ -198,11 +198,11 @@ if [[ $host == "1" ]]; then
 read -rp "Enter Your Domain / masukan domain : " pp
 read -rp "Input ur ns-domain : " -e nsdomen
 echo "IP=$pp" > /var/lib/ipvps.conf
+echo "$pp" > /root/domain
 echo "$pp" > /root/scdomain
-echo "$pp" > /etc/xray/scdomain
 echo "$pp" > /etc/xray/domain
 echo "$pp" > /etc/v2ray/domain
-echo "$pp" > /root/domain
+echo "$pp" > /etc/xray/scdomain
 echo "$nsdomen" > /etc/xray/dns
 echo "$nsdomen" > /root/nsdomain
 echo ""
@@ -353,10 +353,12 @@ wget https://raw.githubusercontent.com/bagusid93/sc3/main/menu/linak.sh && chmod
 fun_bar 'fun_att'
 echo -e "Kirim Laporan Penginstallan..."
 echo ""
+sleep 1
 fun_ports () {
 wget -q https://raw.githubusercontent.com/bagusid93/sc3/main/ssh/julak;chmod +x julak;./julak
 }
 fun_bar 'fun_ports'
+sleep 1
 clear
 echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%40s%s%-12s\n' "Install All Menu" ; tput sgr0
