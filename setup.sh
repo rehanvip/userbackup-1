@@ -203,7 +203,7 @@ echo "$pp" > /etc/xray/scdomain
 echo "$pp" > /etc/xray/domain
 echo "$pp" > /etc/v2ray/domain
 echo "$pp" > /root/domain
-echo "$nsdomen" > /etc/xray/nsdomain
+echo "$nsdomen" > /etc/xray/dns
 echo "$nsdomen" > /root/nsdomain
 echo ""
 elif [[ $host == "2" ]]; then
