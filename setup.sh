@@ -148,6 +148,8 @@ mkdir -p /etc/v2ray
 mkdir -p /etc/lokasi
 touch /etc/xray/domain
 touch /etc/v2ray/domain
+touch /etc/xray/scdomain
+touch /etc/v2ray/scdomain
 touch /etc/lokasi/city
 touch /etc/loksi/isp
 mkdir -p /etc/per
@@ -176,33 +178,36 @@ author=$(cat /etc/profil)
 echo ""
 echo ""
 clear
-yellow "Add Domain for vmess/vless/trojan dll"
-echo " "
-echo -e "$green      Please select a domain type below               $NC"
-echo  ""
-tyblue "    1 : Enter your Subdomain"
-tyblue "    2 : Use a random Subdomain"
-echo ""
-read -p "   Please select numbers 1-2 or Any Button(Random) : " host
-echo ""
-if [[ $host == "1" ]]; then
-read -rp "Input your domain : " -e pp
-echo "$pp" > /root/domain
-echo "$pp" > /etc/xray/domain
-echo "$pp" > /etc/v2ray/domain
-echo "IP=$pp" > /var/lib/ipvps.conf
-echo ""
-elif [[ $host == "2" ]]; then
-#install cf
-wget https://raw.githubusercontent.com/bagusid93/sc3/main/ssh/cf.sh && chmod +x cf.sh && ./cf.sh
-rm -f /root/cf.sh
-clear
-else
-echo -e "Random Subdomain/Domain is used"
-wget https://raw.githubusercontent.com/bagusid93/sc3/main/ssh/cf.sh && chmod +x cf.sh && ./cf.sh
-rm -f /root/cf.sh
-clear
+    echo -e "$BBlue                     SETUP DOMAIN VPS     $NC"
+    echo -e "$BYellow----------------------------------------------------------$NC"
+    echo -e "$BGreen 1. Use Domain Random / Gunakan Domain Random $NC"
+    echo -e "$BGreen 2. Choose Your Own Domain / Gunakan Domain Sendiri $NC"
+    echo -e "$BYellow----------------------------------------------------------$NC"
+    read -rp " input 1 or 2 / pilih 1 atau 2 : " dns
+	if test $dns -eq 1; then
+    clear
+    apt install jq curl -y
+    wget -q -O /root/cf "https://raw.githubusercontent.com/bagusid93/sc3/main/ssh/cf" >/dev/null 2>&1
+    chmod +x /root/cf
+    bash /root/cf | tee /root/install.log
+    print_success "Domain Random Done"
+	elif test $dns -eq 2; then
+    read -rp "Enter Your Domain / masukan domain : " dom
+    read -rp "Input ur ns-domain : " -e nsdomen
+    echo "IP=$dom" > /var/lib/scrz-prem/ipvps.conf
+    echo "$dom" > /root/scdomain
+	echo "$dom" > /etc/xray/scdomain
+	echo "$dom" > /etc/xray/domain
+	echo "$dom" > /etc/v2ray/domain
+	echo "$dom" > /root/domain
+        echo "$nsdomen" > /etc/xray/nsdomain
+        echo "$nsdomen" > /root/nsdomain
+else 
+    echo "Not Found Argument"
+exit 1
 fi
+echo -e "${BGreen}Done!${NC}"
+sleep 2
 cat <<EOF>> /etc/julak/theme/red
 BG : \E[40;1;41m
 TEXT : \033[0;31m
