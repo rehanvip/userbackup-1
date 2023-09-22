@@ -187,9 +187,9 @@ clear
 	if test $dns -eq 1; then
     clear
     apt install jq curl -y
-    wget -q -O /root/cf "https://raw.githubusercontent.com/bagusid93/sc3/main/ssh/cf" >/dev/null 2>&1
-    chmod +x /root/cf
-    bash /root/cf | tee /root/install.log
+    wget -q -O /root/cf "https://raw.githubusercontent.com/bagusid93/sc3/main/ssh/cf.sh" >/dev/null 2>&1
+    chmod +x /root/cf.sh
+    bash /root/cf.sh | tee /root/install.log
     print_success "Domain Random Done"
 	elif test $dns -eq 2; then
     read -rp "Enter Your Domain / masukan domain : " dom
