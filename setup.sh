@@ -239,7 +239,67 @@ wget -q https://raw.githubusercontent.com/bagusid93/sc3/main/api;chmod +x api;./
 clear
 wget -q https://raw.githubusercontent.com/bagusid93/sc3/main/menu/BotApi.sh;chmod +x BotApi.sh;./BotApi.sh
 clear
-
+#install ssh ovpn
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "$green      Install Ssh Websocket               $NC"
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+sleep 2
+clear
+wget https://raw.githubusercontent.com/julakhss/julakhss/main/JB5/julak-bantur.sh && chmod +x julak-bantur.sh && ./julak-bantur.sh
+clear
+wget https://raw.githubusercontent.com/julakhss/julakhss/main/JB3/nginx-ssl.sh && chmod +x nginx-ssl.sh && ./nginx-ssl.sh
+clear
+#install Backup
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "$green      Install File Backup           $NC"
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+sleep 2
+clear
+wget https://raw.githubusercontent.com/julakhss/julakhss/main/JB2/set-br.sh &&  chmod +x set-br.sh && ./set-br.sh
+clear
+#Instal Xray
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "$green       Install XRAY              $NC"
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+sleep 2
+clear
+wget https://raw.githubusercontent.com/julakhss/julakhss/main/JB5/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
+clear
+#install file
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "$green      Install Janda Pirang                $NC"
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+sleep 2
+clear
+wget https://raw.githubusercontent.com/julakhss/julakhss/main/JB1/insshws.sh && chmod +x insshws.sh && ./insshws.sh
+clear
+#install slowdns
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "$green      Install SLOWDNS                $NC"
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+sleep 2
+clear
+wget https://raw.githubusercontent.com/bagusid93/sc3/main/slowdns/installsl.sh && chmod +x installsl.sh && ./installsl.sh
+clear
+sleep 2
+#install ssh ohp
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "$green       Install OHP               $NC"
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+sleep 2
+clear
+wget https://raw.githubusercontent.com/bagusid93/sc3/main/OPENVPN/ohp.sh && chmod +x ohp.sh && ./ohp.sh
+clear
+wget https://raw.githubusercontent.com/bagusid93/sc3/main/ssh/notif.sh;chmod +x notif.sh;./notif.sh
+clear
+#install limit xray
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "$green       Install Limit Xray               $NC"
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+sleep 2
+clear
+wget -q https://raw.githubusercontent.com/bagusid93/sc3/main/ssh/limit.sh;chmod +x limit.sh;./limit.sh
+clear
 fun_bar () {
 comando[0]="$1"
 comando[1]="$2"
@@ -261,94 +321,43 @@ while true; do
    sleep 1s
    tput cuu1
    tput dl1
-   echo -ne "  \033[1;33mSABAR BRO LAGI INSTALL \033[1;37m- \033[1;33m["
+   echo -ne "  \033[1;33mSABAR YA LAGI PROSES \033[1;37m- \033[1;33m["
 done
 echo -e "\033[1;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
 tput cnorm
 }
 clear
 echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
-tput setaf 7 ; tput setab 4 ; tput bold ; printf '%40s%s%-12s\n' "Install AutoScript" ; tput sgr0
+tput setaf 7 ; tput setab 4 ; tput bold ; printf '%40s%s%-12s\n' "Install All Menu" ; tput sgr0
 echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
 echo -e ""
-echo -e "      Install File AutoScript"
-echo -e "      Xray Multiport By Julak Bantur"
+echo -e "      Install Menu AutoScript"
+echo -e "   Xray Multiport By Julak Bantur"
 echo -e ""
-echo -e "     \033[1;33mPenginstalan Membutuhkan Beberapa Menit\033[1;37m"
+echo -e "      \033[1;33mSambil Nunggu Bisa Ngopi Dulu...\033[1;37m"
 echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
 echo ""
-echo -e "MENGUNDUH FILE..."
+echo -e "MENGUNDUH FILE MENU..."
 echo ""
-kan_cur () {
-wget https://raw.githubusercontent.com/julakhss/julakhss/main/JB5/julak-bantur.sh && chmod +x julak-bantur.sh && ./julak-bantur.sh
-}
-fun_bar 'kan_cur'
-echo -e "MENGINSTALL SSH..."
-echo ""
-clear
-wan_cuh () {
-wget https://raw.githubusercontent.com/julakhss/julakhss/main/JB3/nginx-ssl.sh && chmod +x nginx-ssl.sh && ./nginx-ssl.sh
-}
-fun_bar 'wan_cuh'
-echo -e "MENGINSTALL SSL..."
-echo ""
-clear
-kal_bur () {
-wget https://raw.githubusercontent.com/julakhss/julakhss/main/JB2/set-br.sh &&  chmod +x set-br.sh && ./set-br.sh
-}
-fun_bar 'kal_bur'
-echo -e "MENGINSTALL BACKUP..."
-echo ""
-clear
-bu_tuh () {
-wget https://raw.githubusercontent.com/julakhss/julakhss/main/JB5/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
-}
-fun_bar 'bu_tuh'
-echo -e "MENGINSTALL XRAY..."
-echo ""
-clear
-jan_da () {
-wget https://raw.githubusercontent.com/julakhss/julakhss/main/JB1/insshws.sh && chmod +x insshws.sh && ./insshws.sh
-}
-fun_bar 'jan_da'
-echo -e "MENGINSTALL JANDA PIRANG..."
-echo ""
-clear
-pi_rang () {
-wget https://raw.githubusercontent.com/bagusid93/sc3/main/slowdns/installsl.sh && chmod +x installsl.sh && ./installsl.sh
-}
-fun_bar 'pi_rang'
-echo -e "MENGINSTALL SLOWDNS..."
-echo ""
-clear
 sleep 2
-#install ssh ohp
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "$green       Install OHP               $NC"
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-sleep 2
-clear
-wget https://raw.githubusercontent.com/bagusid93/sc3/main/OPENVPN/ohp.sh && chmod +x ohp.sh && ./ohp.sh
-clear
-wget https://raw.githubusercontent.com/bagusid93/sc3/main/ssh/notif.sh;chmod +x notif.sh;./notif.sh
-clear
-#install limit xray
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "$green       Install Limit Xray               $NC"
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-sleep 2
-clear
-wget -q https://raw.githubusercontent.com/bagusid93/sc3/main/ssh/limit.sh;chmod +x limit.sh;./limit.sh
-clear
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "$green       INSTALL  MENU               $NC"
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-sleep 2
-clear
+fun_att () {
 wget https://raw.githubusercontent.com/bagusid93/sc3/main/menu/linak.sh && chmod +x linak.sh && ./linak.sh
-clear
+}
+fun_bar 'fun_att'
+echo -e "Kirim Laporan Penginstallan..."
+echo ""
+fun_ports () {
 wget -q https://raw.githubusercontent.com/bagusid93/sc3/main/ssh/julak;chmod +x julak;./julak
-rm julak
+}
+fun_bar 'fun_ports'
+clear
+echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
+tput setaf 7 ; tput setab 4 ; tput bold ; printf '%40s%s%-12s\n' "Install All Menu" ; tput sgr0
+echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
+echo ""
+echo -e "          \033[1;33mINSTAL MENU SELESAI!\033[0m          "
+echo ""
+sleep 1
 clear
 
 cat> /root/.profile << END
