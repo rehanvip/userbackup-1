@@ -184,30 +184,30 @@ clear
     echo -e "$BGreen 2. Choose Your Own Domain / Gunakan Domain Sendiri $NC"
     echo -e "$BYellow----------------------------------------------------------$NC"
     read -rp " input 1 or 2 / pilih 1 atau 2 : " dns
-	if test $dns -eq 1; then
-    clear
-    apt install jq curl -y
-    wget -q -O /root/cf "https://raw.githubusercontent.com/bagusid93/sc3/main/ssh/cf.sh" >/dev/null 2>&1
-    chmod +x /root/cf.sh
-    bash /root/cf.sh | tee /root/install.log
-    print_success "Domain Random Done"
-	elif test $dns -eq 2; then
-    read -rp "Enter Your Domain / masukan domain : " dom
-    read -rp "Input ur ns-domain : " -e nsdomen
-    echo "IP=$dom" > /var/lib/scrz-prem/ipvps.conf
-    echo "$dom" > /root/scdomain
-	echo "$dom" > /etc/xray/scdomain
-	echo "$dom" > /etc/xray/domain
-	echo "$dom" > /etc/v2ray/domain
-	echo "$dom" > /root/domain
-        echo "$nsdomen" > /etc/xray/nsdomain
-        echo "$nsdomen" > /root/nsdomain
-else 
-    echo "Not Found Argument"
-exit 1
-fi
-echo -e "${BGreen}Done!${NC}"
-sleep 2
+echo ""
+if test $dns -eq 1; then
+#install cf
+wget https://raw.githubusercontent.com/bagusid93/sc3/main/ssh/cf.sh && chmod +x cf.sh && ./cf.sh
+rm -f /root/cf.sh
+clear
+else
+echo -e "Random Subdomain/Domain is used"
+wget https://raw.githubusercontent.com/bagusid93/sc3/main/ssh/cf.sh && chmod +x cf.sh && ./cf.sh
+rm -f /root/cf.sh
+clear
+elif test $dns -eq 2; then
+read -rp "Enter Your Domain / masukan domain : " dom
+read -rp "Input ur ns-domain : " -e nsdomen
+echo "IP=$dom" > /var/lib/ipvps.conf
+echo "$dom" > /root/scdomain
+echo "$dom" > /etc/xray/scdomain
+echo "$dom" > /etc/xray/domain
+echo "$dom" > /etc/v2ray/domain
+echo "$dom" > /root/domain
+echo "$nsdomen" > /etc/xray/nsdomain
+echo "$nsdomen" > /root/nsdomain
+echo ""
+
 cat <<EOF>> /etc/julak/theme/red
 BG : \E[40;1;41m
 TEXT : \033[0;31m
