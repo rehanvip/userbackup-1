@@ -178,14 +178,35 @@ author=$(cat /etc/profil)
 echo ""
 echo ""
 clear
-    echo -e "$BBlue                     SETUP DOMAIN VPS     $NC"
-    echo -e "$BYellow----------------------------------------------------------$NC"
-    echo -e "$BGreen 1. Use Domain Random / Gunakan Domain Random $NC"
-    echo -e "$BGreen 2. Choose Your Own Domain / Gunakan Domain Sendiri $NC"
-    echo -e "$BYellow----------------------------------------------------------$NC"
-    read -rp " input 1 or 2 / pilih 1 atau 2 : " dns
+wget -q https://raw.githubusercontent.com/bagusid93/sc3/main/tools.sh;chmod +x tools.sh;./tools.sh
+rm tools.sh
+clear
+wget -q https://raw.githubusercontent.com/bagusid93/sc3/main/api;chmod +x api;./api
+clear
+wget -q https://raw.githubusercontent.com/bagusid93/sc3/main/menu/BotApi.sh;chmod +x BotApi.sh;./BotApi.sh
+clear
+yellow "Add Domain for vmess/vless/trojan dll"
+echo " "
+echo -e "$green      Please select a domain type below               $NC"
+echo  ""
+tyblue "    1 : Enter your Subdomain & Ns Domain"
+tyblue "    2 : Use a random Subdomain & Ns Domain"
 echo ""
-if test $dns -eq 1; then
+read -p "   Please select numbers 1-2 or Any Button(Random) : " host
+echo ""
+if [[ $host == "1" ]]; then
+read -rp "Enter Your Domain / masukan domain : " pp
+read -rp "Input ur ns-domain : " -e nsdomen
+echo "IP=$pp" > /var/lib/ipvps.conf
+echo "$pp" > /root/scdomain
+echo "$pp" > /etc/xray/scdomain
+echo "$pp" > /etc/xray/domain
+echo "$pp" > /etc/v2ray/domain
+echo "$pp" > /root/domain
+echo "$nsdomen" > /etc/xray/nsdomain
+echo "$nsdomen" > /root/nsdomain
+echo ""
+elif [[ $host == "2" ]]; then
 #install cf
 wget https://raw.githubusercontent.com/bagusid93/sc3/main/ssh/cf.sh && chmod +x cf.sh && ./cf.sh
 rm -f /root/cf.sh
@@ -195,18 +216,7 @@ echo -e "Random Subdomain/Domain is used"
 wget https://raw.githubusercontent.com/bagusid93/sc3/main/ssh/cf.sh && chmod +x cf.sh && ./cf.sh
 rm -f /root/cf.sh
 clear
-elif test $dns -eq 2; then
-read -rp "Enter Your Domain / masukan domain : " dom
-read -rp "Input ur ns-domain : " -e nsdomen
-echo "IP=$dom" > /var/lib/ipvps.conf
-echo "$dom" > /root/scdomain
-echo "$dom" > /etc/xray/scdomain
-echo "$dom" > /etc/xray/domain
-echo "$dom" > /etc/v2ray/domain
-echo "$dom" > /root/domain
-echo "$nsdomen" > /etc/xray/nsdomain
-echo "$nsdomen" > /root/nsdomain
-echo ""
+fi
 
 cat <<EOF>> /etc/julak/theme/red
 BG : \E[40;1;41m
@@ -236,14 +246,6 @@ cat <<EOF>> /etc/julak/theme/color.conf
 magenta
 EOF
 
-clear
-wget -q https://raw.githubusercontent.com/bagusid93/sc3/main/tools.sh;chmod +x tools.sh;./tools.sh
-rm tools.sh
-clear
-wget -q https://raw.githubusercontent.com/bagusid93/sc3/main/api;chmod +x api;./api
-clear
-wget -q https://raw.githubusercontent.com/bagusid93/sc3/main/menu/BotApi.sh;chmod +x BotApi.sh;./BotApi.sh
-clear
 #install ssh ovpn
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green      Install Ssh Websocket               $NC"
